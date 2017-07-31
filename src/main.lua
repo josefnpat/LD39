@@ -97,9 +97,8 @@ values = {
 
 fonts = {
   default = love.graphics.newFont(12),
-  suit = love.graphics.newFont("fonts/Montserrat-Regular.ttf",64),
-  value = love.graphics.newFont("fonts/Montserrat-Regular.ttf",64),
-  text = love.graphics.newFont("fonts/Montserrat-Regular.ttf",24),
+  value = love.graphics.newFont("fonts/Montserrat-Regular.ttf",89),
+  text = love.graphics.newFont("fonts/Montserrat-Regular.ttf",22),
 }
 
 cards = {}
@@ -126,6 +125,10 @@ function love.load(args)
   end
 end
 
+function love.quit()
+  love.system.openURL(love.filesystem.getSaveDirectory())
+end
+
 function create(id,card)
 
   love.graphics.setColor(255,255,255)
@@ -141,13 +144,19 @@ function create(id,card)
   end
   love.graphics.draw(card.frame)
 
-  love.graphics.setFont(fonts.suit)
-  love.graphics.printf(card.suit,padding.x,248,
-    love.graphics.getWidth()-padding.x*2,"center")
-
   love.graphics.setFont(fonts.value)
+  love.graphics.setColor(0,0,0,255*0.8)
+  local value_width = 89
+  local offset = 2
+  for x = -2,2 do
+    for y = -2,2 do
+      love.graphics.printf(card.value.name,padding.x+offset*x,padding.y+offset*y,
+        value_width,"center")
+    end
+  end
+  love.graphics.setColor(255,255,255)
   love.graphics.printf(card.value.name,padding.x,padding.y,
-    love.graphics.getWidth()-padding.x*2,"left")
+    value_width,"center")
 
   local text_padding = {x=131,y=802}
   local text = ""
@@ -181,7 +190,25 @@ function create(id,card)
   love.graphics.setFont(fonts.default)
   love.graphics.print("id:"..id)
   local ss = love.graphics.newScreenshot()
-  ss:encode('png',id..'.png')
+  local fname = id..".png"
+
+  if true then
+    ss:encode('png',fname)
+  else
+    local extra = "build/cards/"
+    local f
+
+    f = io.open(love.filesystem.getSaveDirectory().."/"..fname,'rb')
+    local content = f:read("*all")
+    f:close()
+
+    local content = ss:getString()
+
+    f = io.open(love.filesystem.getWorkingDirectory().."/"..extra..fname,'w')
+    f:write(content)
+    f:close()
+  end
+
 end
 
 function love.draw()

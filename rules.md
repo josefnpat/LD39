@@ -1,5 +1,9 @@
 # Save Atlantis
 
+## Story
+
+You find yourself stranded on the fabled island of Atlantis. Once a spectacular nation, now it lies in shambles due to a plague. You have a battery powered HEV suit for protection, but the battery power is running out. Play this exciting card game and see who can last the longest!
+
 ## Part Requirements
 
 * A set of Save Atlantis cards. (A standard 52 card deck can be substituted for this)
@@ -43,3 +47,11 @@ If you activate a:
 Aces are low.
 
 If you land on a face card, you must discard a card. If that card is a face card, you draw two cards and activate the face card's suit twice.
+
+## Credits
+
+* Creative Direction, Game Mechanics and Programming: @josefnpat
+* Art and Playtesting: @bytedesigning
+* Graphic Design, Playtesting and Asshatery: @artschu
+* Playtesting and Assistant Nacho Manager: @chrisronin
+* Playtesting and Music: @eternalnightpro
