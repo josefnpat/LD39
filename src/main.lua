@@ -164,13 +164,19 @@ function create(id,card)
     text = text .. "When this card is activated, "..card.suit.play.." "
   end
   love.graphics.setFont(fonts.text)
-  for i,v in pairs({{0,0,0,255*0.8},{255,255,255}}) do
-    love.graphics.setColor(v)
-    local offset = i == 1 and 2 or 0
+
+  love.graphics.setColor(0,0,0,255*0.8)
+  local offset = 2
+  for x = -1,1 do
+    for y = -1,1 do
+      love.graphics.printf(text,text_padding.x+offset*x,text_padding.y+offset*y,
+        love.graphics.getWidth()-text_padding.x*2,"center")
+    end
+  end
+  offset = 0
+  love.graphics.setColor(255,255,255)
     love.graphics.printf(text,text_padding.x+offset,text_padding.y+offset,
       love.graphics.getWidth()-text_padding.x*2,"center")
-  end
-  love.graphics.setColor(255,255,255)
 
   love.graphics.setFont(fonts.default)
   love.graphics.print("id:"..id)

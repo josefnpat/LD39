@@ -4,7 +4,7 @@
 
 * A set of Save Atlantis cards. (A standard 52 card deck can be substituted for this)
 * A power die, perhaps a six sided die, for each player.
-* A token for each player. (a minertature figurine or a beer bottle cap)
+* A token for each player. (a miniature figurine or a beer bottle cap)
 * 2 to 4 players.
 
 ## Game Setup
@@ -27,10 +27,10 @@ If your power die reaches zero (e.g. you have one power, and must reduce it) you
   b. draw a card into your hand.
   c. draw a card without looking at it, and place it adjacent to any card on the table. (Your card must be able to fit on the table. If you only have room for one card, consider finding a larger table, you nut.)
 1. During your turn you may:
-  a. move to an adjacent card that is face down. For every move you make, reduce your power die by one. (You must have two or more power to move.) Flip that card rightside up and activate it (follow the instructions on the card). 
+  a. move to an adjacent card that is face down. For every move you make, reduce your power die by one. (You must have two or more power to move.) Flip that card right side up and activate it (follow the instructions on the card). 
   b. Play any card from your hand. Any card played may be countered (or nullified) if anyone else plays a card with a higher value. (Face cards cannot be countered).
 
-## Gameplay without Save Atlantis cards
+## Game play without Save Atlantis cards
 
 __These instructions are if you only have a standard 52 card deck__
 
