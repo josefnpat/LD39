@@ -65,7 +65,10 @@ If you activate a:
 
 Aces are low.
 
-If you land on a face card, you must discard a card. If that card is a face card, you draw two cards and activate the face card's suit twice.
+If you land on a face card, you must discard a card. If the discarded card is a face card:
+
+1. You draw two cards
+2. Activate the face card's suit that you landed on, twice.
 
 ## Build
 
