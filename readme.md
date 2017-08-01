@@ -1,5 +1,9 @@
 # Save Atlantis
 
+## About
+
+This game was made for LD39. This is a physical card game!
+
 ## Story
 
 You find yourself stranded on the fabled island of Atlantis. Once a spectacular nation, now it lies in shambles due to a plague. You have a battery powered HEV suit for protection, but the battery power is running out. Play this exciting card game and see who can last the longest!
@@ -47,6 +51,13 @@ If you activate a:
 Aces are low.
 
 If you land on a face card, you must discard a card. If that card is a face card, you draw two cards and activate the face card's suit twice.
+
+## Build
+
+1. Run love (0.10.2) against the src folder, which builds the cards in your save directory.
+2. Move the cards to build/cards/
+3. run build/montage.sh from the build folder
+4. output-*.png is what you're looking for
 
 ## Credits
 
