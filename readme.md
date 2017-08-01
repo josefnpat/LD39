@@ -48,6 +48,7 @@ _Note: Your card must be able to fit on the table. If you only have room for one
 * For every move you make, reduce your power die by 1. (You must have 2 or more power to move or you will die)
 * Flip that card right-side up and activate it. Follow the instructions on the card.
 2. Play any card from your hand.
+
 * Any card played may be countered (or nullified) by anyone who plays a card with a value higher than the card you are playing.
 * Face cards cannot be countered
 
@@ -58,6 +59,7 @@ You may choose to do (1) and (2) as much as you are able to. Your turn ends when
 __These instructions are if you only have a standard 52 card deck__
 
 If you activate a:
+
 * diamond (a recharge card), recharge your power die up to two.
 * spade (a bomb card), you may destroy any card on the table that does not have a player on it.
 * heart (a build card), you must draw a card, and place it face down somewhere on the table adjacent to another card.
