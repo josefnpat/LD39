@@ -21,7 +21,7 @@ You find yourself stranded on the fabled island of Atlantis. Once a spectacular 
 2. Each player draws five cards.
 3. Place a single card face down on the table.
 4. Each player chooses and places a token on top of the face down card.
-5. Each player takes a power die and places it down with the value 6.
+5. Each player takes a power die and places it's highest value upwards.
 
 ## Gameplay
 
@@ -76,8 +76,8 @@ If you land on a face card, you must discard a card. If that card is a face card
 
 ## Credits
 
-* Creative Direction, Game Mechanics and Programming: @josefnpat
-* Art and Playtesting: @bytedesigning
-* Graphic Design, Playtesting and Asshatery: @artschu
-* Playtesting and Assistant Nacho Manager: @chrisronin
-* Playtesting and Music: @eternalnightpro
+* Creative Direction, Game Mechanics and Programming: [@josefnpat](http://twitter.com/josefnpat)
+* Art and Playtesting: [@bytedesigning](http://twitter.com/bytedesigning)
+* Graphic Design, Playtesting and Asshatery: [@artschu](http://twitter.com/artschu)
+* Playtesting and Assistant Nacho Manager: [@chrisronin](http://twitter.com/chrisronin)
+* Playtesting and Music: [@eternalnightpro](http://twitter.com/eternalnightpro)
