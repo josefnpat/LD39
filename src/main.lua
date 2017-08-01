@@ -135,7 +135,7 @@ function create(id,card)
   love.graphics.rectangle("fill",0,0,
     love.graphics.getWidth(),love.graphics.getHeight())
 
-  local padding = {x=107,y=107}
+  local padding = {x=57,y=107}
   love.graphics.draw(card.suit.bg)
   if card.value.image then
     love.graphics.draw(card.value.image)
@@ -146,7 +146,7 @@ function create(id,card)
 
   love.graphics.setFont(fonts.value)
   love.graphics.setColor(0,0,0,255*0.8)
-  local value_width = 89
+  local value_width = 189
   local offset = 2
   for x = -2,2 do
     for y = -2,2 do
