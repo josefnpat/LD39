@@ -2,95 +2,87 @@ frame = love.graphics.newImage("frame.png")
 suits = {
   {
     name="spade",
-    play="destroy any placed card that does not have a player on it.",
+    play="SUIT POWER: DESTROY\nRemove any one (1) card from the field and place in discard pile. Card must not have a player on it.",
     image = love.graphics.newImage("spade.png"),
     bg = love.graphics.newImage("bg_spade.png")
   },
   {
     name="heart",
-    play="draw a card into your hand and then place a card on the table from your hand face down adjacent to another card.",
+    play="SUIT POWER: BUILD\nDraw one (1) card, then place any card from your hand onto the field, adjacent to another card.",
     image = love.graphics.newImage("heart.png"),
     bg = love.graphics.newImage("bg_heart.png")
   },
   {
     name="diamond",
-    play="add up to two on your power die for a maximum of six.",
+    play="SUIT POWER: RECHARGE\nRaise your POWER DIE by two (2). Maximum six (6).",
     image = love.graphics.newImage("diamond.png"),
     bg = love.graphics.newImage("bg_diamond.png")
   },
   {
     name="clubs",
-    play="privately look at any face down card on the table. You may flip the card over. If you do, skips the activation phase.",
+    play="SUIT POWER: VISION\nPrivately look at one (1) face down card on the field. You may A) Flip card face up to nullify card or B) Leave it.",
     image = love.graphics.newImage("club.png"),
     bg = love.graphics.newImage("bg_club.png")
   },
 }
 
-activate_it = "If this card is revealed when stepped on, activate it."
-activate_it2 = "If this card is revealed when stepped on, discard a card. If that card is a face card, draw two cards and activate this card twice."
+common_1 = "This card is activated when flipped or played from hand on the player’s turn. If played from hand, discard immediately. A played card can be countered by any card of greater value (excluding MONSTER CARDS)."
+common_2 = "This card is activated when flipped. Player must discard one (1) card from hand. If discarded card is a MONSTER CARD, activate that one’s SUIT POWER twice and draw two (2) cards."
 
 values = {
   {
     name="1",
+    play = common_1,
   },
   {
     name="2",
-    play = "counter any card with a value of 1.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="3",
-    play = "counter any card with a value of 2 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="4",
-    play = "counter any card with a value of 3 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="5",
-    play = "counter any card with a value of 4 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="6",
-    play = "counter any card with a value of 5 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="7",
-    play = "counter any card with a value of 6 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="8",
-    play = "counter any card with a value of 7 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="9",
-    play = "counter any card with a value of 8 or less.",
-    rules = {activate_it},
+    play = common_1,
   },
   {
     name="10",
-    rules = {activate_it},
-    play = "counter any card with a value of 9 or less.",
+    play = common_1,
   },
   {
     name="J",
-    rules = {activate_it2},
+    play = common_2,
     image = love.graphics.newImage("jack.png"),
   },
   {
     name="Q",
-    rules = {activate_it2},
+    play = common_2,
     image = love.graphics.newImage("queen.png"),
   },
   {
     name="K",
-    rules = {activate_it2},
+    play = common_2,
     image = love.graphics.newImage("king.png"),
   },
 }
@@ -98,7 +90,7 @@ values = {
 fonts = {
   default = love.graphics.newFont(12),
   value = love.graphics.newFont("fonts/Montserrat-Regular.ttf",89),
-  text = love.graphics.newFont("fonts/Montserrat-Regular.ttf",22),
+  text = love.graphics.newFont("fonts/Alike-Regular.ttf",22),
 }
 
 cards = {}
@@ -158,34 +150,23 @@ function create(id,card)
   love.graphics.printf(card.value.name,padding.x,padding.y,
     value_width,"center")
 
-  local text_padding = {x=131,y=802}
+  local text_padding = {x=131-24,y=802}
   local text = ""
+  if card.suit then
+    text = text .. card.suit.play
+  end
+  text = text .. "\n\n"
   if card.value.play then
-    text = text .. "Discard this card at any time to "..card.value.play.." "
-  end
-  if card.value.rules then
-    for i,v in pairs(card.value.rules) do
-      text = text .. v .. " "
-    end
-  end
-  if card.suit.play then
-    text = text .. "You may discard this card during your turn to activate it. "
-    text = text .. "When this card is activated, "..card.suit.play.." "
+    text = text .. card.value.play
   end
   love.graphics.setFont(fonts.text)
 
   love.graphics.setColor(0,0,0,255*0.8)
   local offset = 2
-  for x = -1,1 do
-    for y = -1,1 do
-      love.graphics.printf(text,text_padding.x+offset*x,text_padding.y+offset*y,
-        love.graphics.getWidth()-text_padding.x*2,"center")
-    end
-  end
   offset = 0
-  love.graphics.setColor(255,255,255)
+  love.graphics.setColor(0,0,0)
     love.graphics.printf(text,text_padding.x+offset,text_padding.y+offset,
-      love.graphics.getWidth()-text_padding.x*2,"center")
+      love.graphics.getWidth()-text_padding.x*2,"left")
 
   love.graphics.setFont(fonts.default)
   love.graphics.print("id:"..id)
